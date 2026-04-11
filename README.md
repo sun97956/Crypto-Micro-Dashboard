@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Crypto Macro Dashboard
 
-## Getting Started
+一个面向加密市场的宏观数据看板，将链上价格、美联储经济数据与市场情绪整合在同一个页面，帮助你在做投资判断时快速建立宏观视角。
 
-First, run the development server:
+**线上地址：** [crypto-micro-dashboard.vercel.app](https://crypto-micro-dashboard.vercel.app)
+
+---
+
+## 看板内容
+
+**价格与市场**
+- BTC、ETH、SOL、BNB、XRP、HYPE 实时报价，24h / 7d 涨跌幅
+- BTC 历史走势面积图，支持 7D / 30D / 90D 切换
+- 全球加密市场总市值、BTC 市场占比、稳定币规模
+
+**宏观经济**
+- 美联储基金利率、10 年期美债收益率、CPI、欧元兑美元汇率
+- M2 货币供应量与 BTC 价格的长期对比图（2020 年至今）
+
+**市场情绪**
+- Alternative.me 恐惧与贪婪指数近期走势，含 Extreme Fear / Greed 分区线
+
+---
+
+## 使用方式
+
+**方式一：直接访问线上版本**
+
+打开线上地址即可，无需注册或登录。数据默认缓存（价格每小时更新，宏观与情绪每天更新），点击右上角 **Refresh** 按钮可手动刷新所有数据。
+
+**方式二：本地运行**
+
+需要自行申请 CoinMarketCap、CoinGecko Pro、FRED 的 API Key，在根目录创建 `.env.local` 填入后启动：
 
 ```bash
+git clone https://github.com/sun97956/Crypto-Micro-Dashboard.git
+cd Crypto-Micro-Dashboard
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 数据来源
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[CoinMarketCap](https://coinmarketcap.com) · [CoinGecko](https://coingecko.com) · [FRED](https://fred.stlouisfed.org) · [Alternative.me](https://alternative.me)
