@@ -62,7 +62,7 @@ export async function GET() {
 
     return NextResponse.json(
       { data, updatedAt: new Date().toISOString() },
-      { headers: { 'Cache-Control': 's-maxage=3600, stale-while-revalidate=300' } }
+      { headers: { 'Cache-Control': 'no-store, max-age=0' } }
     )
   } catch (err) {
     return NextResponse.json(

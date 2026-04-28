@@ -83,7 +83,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json(
       { data, updatedAt: new Date().toISOString() },
-      { headers: { 'Cache-Control': 's-maxage=3600, stale-while-revalidate=300' } }
+      { headers: { 'Cache-Control': 's-maxage=300, must-revalidate' } }
     )
   } catch (err) {
     return NextResponse.json(
